@@ -1,0 +1,69 @@
+# VPK Environment Configuration
+# Copy this file to .env for development or use setup.py for production
+
+# CORS Configuration
+# JSON array of allowed origins. Default includes common localhost ports.
+# For production, this is automatically set based on your domain by setup.py
+BACKEND_CORS_ORIGINS=["http://localhost", "http://localhost:3000", "http://localhost:8000"]
+
+# Database
+POSTGRES_USER=vpk
+POSTGRES_PASSWORD=vpk_dev_password
+POSTGRES_DB=vpk_db
+
+# Redis
+REDIS_URL=redis://redis:6379/0
+
+# Security
+SECRET_KEY=dev_secret_key_change_in_production
+
+# Vast.ai API
+VAST_API_KEY=YOUR KEY HERE
+
+
+# AWS S3 Configuration
+AWS_ACCESS_KEY_ID=IDHERE
+AWS_SECRET_ACCESS_KEY=KEYHERE
+
+
+# Application
+ENVIRONMENT=development
+
+# Admin User (for initial setup)
+ADMIN_EMAIL=admin@example.com
+ADMIN_PASSWORD=admin123
+
+
+# File Storage
+MAX_UPLOAD_SIZE_MB=1000
+MAX_HASH_FILE_SIZE_MB=50
+DATA_RETENTION_DAYS=30
+
+#fernet key
+# Generate with: python -c "import os, base64; print(base64.urlsafe_b64encode(os.urandom(32)).decode())"
+SETTINGS_ENCRYPTION_KEY=KEYHERE
+
+# Frontend Configuration
+# For development with nginx proxy, use: http://localhost
+# For direct backend access (bypassing nginx), use: http://localhost:8000
+NEXT_PUBLIC_API_URL=http://localhost
+
+
+# All other settings (API keys, credentials, etc.) are now managed
+# in the database through the application settings interface.
+# Use the admin panel to configure:
+# - Vast.ai API Key
+# - AWS S3 Credentials
+# - Cost Limits
+# - File Size Limits
+# - Data Retention Settings
+
+# Production Note:
+# For production deployment, use the setup.py script which will:
+# - Generate secure random keys
+# - Configure SSL/TLS
+# - Set production-optimized settings
+# - Create deployment scripts
+
+
+
