@@ -64,9 +64,9 @@ For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ### Development Setup
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/d-sec-net/VPK
 cd VPK
-cp .env.example .env
+cp env-example .env
 # Edit .env with your credentials
 docker-compose up -d
 docker-compose exec backend alembic upgrade head
